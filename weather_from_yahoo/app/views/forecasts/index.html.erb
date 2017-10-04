@@ -1,0 +1,25 @@
+<%= form_tag "/", method: :get do %>
+  <div>
+     City: <input type="text" name="city" class="form-control">
+  </div>
+  <div>
+    State: <input type="text" name="state" class="form-control">
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+<% end %>
+
+<h1>Weather Forecast</h1>
+
+<h3>Location: <%= @forecast["query"]["results"]["channel"]["location"]["city"] %>, <%= @forecast["query"]["results"]["channel"]["location"]["region"] %></h3>
+
+<h3>5 Day Forecast</h3>
+<br>
+<% @forecast_5.each do |forecast| %>
+  <h4>Date: <%= forecast["date"] %></h4>
+  <h4>Day: <%= forecast["day"] %></h4>
+  <h4>High: <%= forecast["high"] %></h4>
+  <h4>Low: <%= forecast["low"] %></h4>
+  <h4><%= forecast["text"] %></h4>
+  <br>
+<% end %>

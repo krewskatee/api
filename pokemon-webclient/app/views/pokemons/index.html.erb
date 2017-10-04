@@ -1,0 +1,8 @@
+<h1>Pokemon Info</h1>
+
+<% @pokemons.each do |pokemon| %>
+  <h4>Name: <%= pokemon["name"] %></h4>
+  <h4>Location: <%= pokemon["location"] %></h4>
+  <h4>Move: <%= pokemon["move"] %></h4>
+  <br>
+<% end %>

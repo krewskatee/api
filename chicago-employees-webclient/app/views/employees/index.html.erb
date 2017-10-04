@@ -1,0 +1,12 @@
+<h1>Chicago Employees</h1>
+
+<% @employees.each do |employee| %>
+  <h2>Name: <%= employee["name"] %></h2>
+  <h3>Job: <%= employee["job_titles"] %></h3>
+  <% if employee["salary_or_hourly"] == "Salary" %>
+    <h3>Salary: <%= number_to_currency(employee["annual_salary"]) %></h3>
+  <% else %>
+    <h3>Hourly Average: <%= number_to_currency(employee["hourly_rate"]) %> x <%= employee["typical_hours"] %></h3>
+  <% end %>
+  <br>
+<% end %>

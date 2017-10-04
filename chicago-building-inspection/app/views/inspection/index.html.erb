@@ -1,0 +1,10 @@
+<h1>City of Chicago Inspections</h1>
+
+<% @inspections.each do |inspection| %>
+
+<h2>Address: <%= inspection["address"] %></h2>
+<h3>Inspection Status: <%= inspection["inspection_status"] %></h3>
+<h3>Violation Description: <%= inspection["violation_description"] %></h3>
+<h3>Violation Inspector Comments: <%= inspection["violation_inspector_comments"] %></h3>
+<br>
+<% end %>
